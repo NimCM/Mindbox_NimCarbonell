@@ -1,0 +1,637 @@
+/* ESTILOS GENÉRICOS */
+
+:root{
+    --main-bg-color:white;
+    --second-bg-color:rgb(244 244 244);
+    --main-color:#1c1c1c;
+    --secondary-color:rgb(177 227 150);
+    --highlight-color: rgb(49 156 72);
+    --shadow-color:rgb(219 218 218);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+/* CARGAR TIPOGRAFIA PROPIA */
+
+@font-face {
+    font-family: "Audiowide"; /* obligatorio */
+    src: url("../fonts/Audiowide-Regular.ttf"); /* obligatorio */
+    font-weight: normal;
+    font-style: normal;
+}
+
+img{ /* Así totas las imagenes son responsive, suele ser un CSS básico en las webs, luego ya se entra en detalles más específicos */
+    width:100%;
+    height: auto;
+    display:block; /* así tienes todo unido y puedes definir al 100% los pixeles de separación com el margin-bottom, sinó te deja unos pixeles de margen que no controlas */
+}
+
+body{
+    font-family: "Funnel Display", sans-serif; /* Tipografia de google fonts */
+    margin:0;
+    padding:0;
+    background-color: var(--second-bg-color); /* Color de fondo general aquí para mantener header y footer con fondo blanco */
+}
+
+h1,h2,h3{
+    color: var(--main-color);
+}
+
+h1{
+    font-family: "Audiowide";
+    font-size: clamp(1.5rem, 5vw, 1.8rem); /* Tamaño de letra responsive, tamaño mínimo: 3rem; tamaño ideal 5% del ancho de la ventana; tamaño máximo: 3.5rem */
+    font-weight: 600; /* Queda definido pero la tipografia que uso no es variable */
+    margin: 0 0 30px 0;
+}
+
+h2{
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    font-weight: 500;
+    margin: 0 0 25px;
+}
+
+h3{
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    font-weight: 400;
+    margin: 0 0 20px 0;
+}
+
+p{
+    font-size: clamp(0.75rem, 5vw, 1rem);
+}
+
+
+a{
+    color: var(--main-color); /* links de color negro */
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline; /* se subratlla el link cuando pasas por encima con el mouse */
+    color:var(--secondary-color);
+}
+
+a.selected{
+    color: var(--highlight-color); /* poner una class=selected entonces te queda marcado el nav de arriba en que página estás */
+    font-family: helvetica, sans-serif;
+    font-weight:600;
+}
+
+footer{
+    background-color: white; /* color de fondo del footer */
+    padding: 24px; /* espacio superior y inferior del footer */
+    text-align: center;
+
+}
+
+button, .button, .btn{ /* links anidados dentro de la classe features, btn llama al button de bootstrap */
+    font-family:Helvetica, sans-serif;
+    background-color: var(--secondary-color); /* color de los botones */
+    border-radius: 20px; /* redondeo de las esquinas de los botones */
+    padding: 10px 20px;
+    font-weight: 200;
+    border:none;
+    color: var(--main-color);
+}
+
+.button:visited, .button:visited, .btn:visited, .btn-primary:visited{ /* Enlace visitado, hay links falsos para que algunos enlaces parezcan no visitados */
+    background-color: rgb(225 225 225);
+    color: var(--highlight-color);
+}
+
+button:hover, .button:hover, .btn:hover, .btn-primary:hover{
+    background-color: var(--main-color); /* color de los botones */
+    color: var(--secondary-color);
+    border: none;
+    text-decoration: none;
+} 
+
+button:active, .button:active, .btn:active{
+    color:white;
+    background-color: var(--highlight-color) !important; /* Se añade !important porque es la única manera que he encontrado para sobreescrivir el bootstrap */
+}
+
+
+/* LOGO */
+
+#logo-imatge{ /* ponemos # porqué es un ID y no una class, al ser más especifico que .img aplica este estilo al logo */
+    width:200px;
+}
+
+/* USER PROFILE */
+
+.profile-image{
+    width:60px;
+    border-radius: 80%;
+}
+
+.profile-image:hover{ /* cuando pones el cursor sobre la imagen se crea un borde */
+    outline: 5px solid var(--secondary-color);
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: var(--main-bg-color);
+    font-size:0.9rem;
+
+    .logo{
+        flex: 1;
+    }
+
+    .main-menu{
+        display:flex;
+        margin:0;
+        padding: 0;
+        list-style:none;  /* elimina los puntos de la lista */
+        flex: 3;
+        gap:25px;
+        
+    }
+
+    .user-menu{
+        display:flex;
+        align-items: center;
+        flex: 1;
+        justify-content:flex-end;
+        margin-right: 20px;
+        gap:15px;
+
+        span{
+           cursor:pointer; 
+        }
+    }
+
+    .icon-menu{
+        display:flex;
+        gap:15px;
+        color: var(--main-color);
+    }
+
+    .material-symbols-outlined{ /* iconos header */
+        font-size: 2rem; /* se usa font-size porque es una fuente de google, no una imagen */
+    }
+
+    .material-symbols-outlined:hover{
+        color:var(--secondary-color);
+    }
+
+
+}
+
+/* ESTILOS PARA DASHBOARD */
+
+.featured{ /* Delante del punto podemos poner 'section' que es el tag */
+    padding:32px;
+    margin-bottom: 30px; 
+}
+
+
+
+.featured-boxes{
+    display: flex;
+    flex-wrap:wrap; /* permite que los elementos se pongan en más de una fila */
+    gap: 80px;
+    align-items: stretch;
+    margin: auto 20px;
+
+}
+
+.feature-box{
+    border: 0.1px rgb(232 232 232) solid;
+    box-sizing: border-box;
+    padding: 20px; /* para que el botón quede dentro de la box */
+    border-radius: 20px;
+    background-color: var(--main-bg-color);
+    box-shadow: 1px 1px 5px var(--shadow-color) ;  /* offset-x, offset-y, blur-radius, color */
+    flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
+    display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    min-height: 100px;
+}
+
+/* ESTILOS PARA INSPIRACIONES */
+
+.inspiration{ /* Delante del punto podemos poner 'section' que es el tag */
+    padding: 32px;
+    margin-bottom: 30px; 
+}
+
+.content-inspo{
+    display: flex;
+    flex-wrap:wrap; /* permite que los elementos se pongan en más de una fila */
+    gap: 80px;
+    align-items: center;
+    margin: auto 20px;
+}
+
+.box-inspo, .task-form{
+    border: 0.1px rgb(232 232 232) solid;
+    box-sizing: border-box; 
+    border-radius: 20px;
+    background-color: var(--main-bg-color);
+    box-shadow: 1px 1px 5px var(--shadow-color) ;  /* offset-x, offset-y, blur-radius, color */
+    flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
+    overflow: hidden; /* Esconde la parte que sobra de la imagen como las esquinas */
+}
+
+.inspo-image{
+   height: auto;
+   max-height: 450px ;
+   aspect-ratio: 16/9;
+   width: 100%;
+   object-fit: cover; /* La imagen no se defomra y rellena todo el espacio definido */
+   display: block;
+
+}
+
+.inspo-text{
+    display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    min-height: 200px; /* Altura definida para poder dejar el texto centrado en altura */
+}
+
+/* INSPIRACIÓN */
+
+.inspiration-page{
+    padding:32px; /* para que no este tocando con los laterales */
+    margin-bottom: 30px;  /* para que hay más espacio con la sección inferior */
+}
+
+.inspo-box, .search-form, .form-date{
+    border: 0.1px rgb(232 232 232) solid;
+    box-sizing: border-box; 
+    border-radius: 20px;
+    background-color: var(--main-bg-color);
+    box-shadow: 1px 1px 5px var(--shadow-color) ; 
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    gap:20px;
+
+    label{ /* Titulos de las casillas */
+        margin: 0; /* Para quitar el margen predefinido en el parrafo */
+    } 
+
+    fieldset{
+        border: none; /* Quitar el borde del grupo */
+    }
+
+    input::placeholder, textarea::placeholder, input[type="date"]{
+        /* para modificar la fuente del placeholder */
+        font-family: Helvetica, sans-serif;
+        font-weight: 300;
+        color: rgb(71 130 71);
+        opacity: 1;
+        font-size: 0.7rem;
+    }
+
+    input:focus, textarea:focus{ /* para que al seleccionar para escribir el formulario se resalte el borde */
+        border: 1.5px var(--main-color) solid;
+        outline: none;
+    }
+
+
+    #inspo-comment{
+        height: 100px;
+        line-height: 1.5px;
+        padding-top: 12px;
+    }
+
+    .form-date{
+        width: 50px;
+        
+    }   
+}
+
+.inspo-form, #textInput, .form-control{ /* casillas dle formulario */
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px  var(--secondary-color) solid;
+    background-color: var(--second-bg-color); 
+}
+
+/* ASIDE GRID */
+
+aside ul{
+    list-style-type: none; /* quitamos los puntos de delante de la lista */
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    /* si no sabemos cuantos items tendremos, podemos dejar que defina segun cuantos items hay y que los items definan la medida*/
+    gap:5px;
+    justify-content: space-around;
+    align-content: center;
+    padding-left: 15px;
+    margin: 0;
+}
+
+aside ul li{
+   /* border: 1px rgb(190 13 43) solid; */
+    max-width: 95%;
+    padding: 5px 0 0 5px;
+    box-shadow: 1px 1px 5px var(--shadow-color) ;  /* offset-x, offset-y, blur-radius, color */
+    cursor:pointer; 
+    line-height: 30px;
+
+    .material-symbols-outlined{ /* iconos aside */
+        font-size: 1.7rem; /* se usa font-size porque es una fuente de google, no una imagen */
+    }
+    
+    a{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-items: center;
+        gap: 5px;
+    }
+}
+
+header{
+    grid-area: encabezado;
+}
+
+main{
+    grid-area: cuerpo;
+}
+
+aside{
+    grid-area: menu-lateral;
+}
+
+footer{
+   
+    grid-area: pie-pagina;
+    
+}
+
+body{
+    display: grid; /* para poderla ver es obligatorio : n de columes y tamaño; n files y tamaño */
+    grid-template-columns: 20% auto; /* numero y tamaño, poner en orden. puedes poner 30% 70% o 30% auto */
+    grid-template-rows: auto auto auto;/* dar el tamaño de su contenido, auto */
+    grid-template-areas:
+    "menu-lateral encabezado" /* definició de les columnes en orde fila1col1 */
+    "menu-lateral cuerpo" /* definició de les columnes en orde fila1col2 */
+    "menu-lateral pie-pagina";/* definició de les columnes en orde fila1col3 */
+    /* gap:10px; se puede usar pero visualmente no queda igual entre filas que entre columnas */
+
+    /* propiedades opcionales, com las tres superiores ya es suficiente, pero si queremos refinar el diseño se pueden utilizar*/
+    column-gap: 8px;
+    row-gap: 10px;
+}
+
+
+/* ASIDE ESTILOS */
+
+aside ul li:first-child{
+    border: 2px dotted var(--main-color);
+}
+
+aside ul li:last-child{
+    border:2px inset var(--secondary-color);
+}
+
+aside ul li:nth-child(4){ /* posició de l'element que volem modificat */
+    border: 2px dashed var(--main-color);
+}
+
+aside ul li{ /* seleccionar todos los aside menos al que tiene el id item) */
+    background-color: var(--highlight-color);
+    border-radius: 15px;
+} 
+
+
+aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id item) */
+    background-color: white;
+    border-radius: 15px;
+} 
+
+/* PROBAMOS BOOTSTRAP */
+
+.col{ /* Para. ver los límites de las columnas del grid */
+    margin: 5px; /* CSS Normal */
+}
+
+/* CARDS BOOTSTRAP*/
+.card-img-top{
+    height: 300px;
+    width: 100%;
+    object-fit: cover; /* cortará la imagen pero rellenará todo el espacio */
+}
+
+.card-img-task{
+    border-bottom: 1px rgb(190 190 190) solid;
+}
+
+.card-quote{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around ;
+    h2{
+        text-decoration: underline var(--highlight-color);
+    }
+}
+
+.card-body{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:20px;
+}
+
+.card-link{
+    max-width: 200px;
+}
+
+/* FORMULARIO NOTAS */
+
+#fieldsetCheck { 
+  border: 1px var(--secondary-color) solid;
+}
+
+#textInput:focus{ /*no va */
+   outline: 1.5px var(--main-color) solid;
+}
+
+.search-form{
+    margin: 0;
+}
+
+.search-button {
+  padding-bottom: 0;
+  margin-top: 30px;
+}
+
+.form-check-label {
+  margin-top: 40px;
+}
+
+.form-check-input {
+  margin-top: 43px;
+}
+
+.form-check-input:focus {
+  outline: none; /* Elimina el outline azul que viene por defecto*/
+  border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
+  box-shadow: 0 0 5px var(--highlight-color); /* Añade el glow alrededor */  
+}
+
+#fieldsetCheck:checked{ /* color de la checkbox una vez seleccionada */
+    background-color: var(--highlight-color);
+}
+
+#fieldsetCheck:disabled{
+    background-color: lightgray; /* hace falta agregar el atribut disabled en HTML para visualizar este estado*/
+}
+
+
+/* PSEUDO ELEMENTOS - NOTAS */
+
+.card-link::before{
+    content: "🌸 ";
+}
+
+.card-link::after{
+    content: "! 🙃";
+}
+
+.card-text::first-letter{
+    font-size: 1.5rem;
+}
+
+.card-text-quote::first-letter{
+    font-size:2rem;
+}
+
+.card-text::first-line{
+    color:grey;
+}
+
+::selection{ /* cuando seleccionas un texto con el ratón, al no tener tag afecta a todos los textos de la página*/
+    color:var(--main-color);
+    background-color: var(--secondary-color);
+}
+
+.card-text::selection{
+    color: rgb(65 65 65);
+    background-color: var(--secondary-color);
+}
+
+/* TAREAS */
+
+.task-form{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+#dateTask{
+    margin-bottom: 25px;
+}
+
+.form-control{ /* Cambio del color de fondo porque sino es muy aprecido al botón, sobreescribo el general que està más arriba */
+    background-color: rgb(244 255 235);
+}
+
+.inspo-form:focus{
+ outline: 1.5px var(--main-color) solid;
+}
+
+.form-control:focus{
+  outline: none; /* Elimina el outline azul que viene por defecto*/
+  border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
+  box-shadow: 0 0 5px var(--highlight-color); /* Añade el glow alrededor */  
+}
+
+.last-tasks{
+    margin-top: 30px;
+}
+
+#startDate, #endDate{
+    width: 30%;
+}
+
+.form-dates{
+    display: flex;
+    width: 45%;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+.uploaded-task-1{
+    grid-area: task1;
+}
+
+.uploaded-task-2{
+    grid-area: task2;
+}
+
+.uploaded-task-3{
+    grid-area: task3;
+}
+
+.uploaded-task-4{
+    grid-area: task4;
+}
+
+.uploaded-task-5{
+    grid-area: task5;
+}
+
+.uploaded-task-6{
+    grid-area: task6;
+}
+
+.grid-container-tasks{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Número de columnas, 4, con el ancho, 1 fracción (sobre 4) del espacio disponible por columna */
+    grid-template-rows: repeat(2, auto); /* Numero de filas */
+    column-gap: 12px;
+    row-gap: 15px;
+    margin-right: 15px;
+    grid-template-areas:
+    "task1 task1 task2 task3" 
+    "task4 task5 task6 task6";
+    /* fila1col1, fila1col2 fila1col3 fila1col4 */
+    /* fila2col1, fila2col2 fila2col3 fila2col4 */
+}
+
+.task-card{
+    height: 650px;
+}
+
+
+.btn-task{
+    max-width: 300px;
+}
+
+.btn-task::before{ /* PSEUDO ELEMENTO - TAREAS */
+    content: "📚 ";
+}
+
+.btn-task::after{ /* PSEUDO ELEMENTO - TAREAS */
+    content: " 🤓";
+}

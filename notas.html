@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindbox-Notas</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+     <!--Link de la tipografia de google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Funnel+Display">
+    <!--Link de los iconos de google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!--Aqui iria la hoja de estilos propias, siempre van debajo de las librerías, porque si queremos sobreescribir va en orden de lectura-->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header class="main-header">
+        <!--LOGO-->
+        <div class="logo">
+            <a title="MindBox" href="index.html"><img src="./img/logo.png" alt="Logo MindBox" id="logo-imatge"></a>  <!--Link en la imagen para que al seleccionar el logo volvamos a la página de inicio-->
+           <!--Logo de la página-->
+        </div>
+
+        <!--MENÚ PRINCIPAL-->
+        <nav >
+            <ul class="main-menu">
+                <li><a href="index.html" >Inicio</a></li>
+                <li><a href="tareas.html">Tareas</a></li>
+                <li><a href="notas.html" class="selected">Notas</a></li>
+                <li><a href="inspiracion.html">Inspiración</a></li>
+                <li><a href="#">Configuración</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-menu">
+            <!--Iconos-->
+            <nav class="icon-menu"> 
+                <span class="material-symbols-outlined">search</span>
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="material-symbols-outlined">settings</span>          
+                <span class="material-symbols-outlined">account_circle</span>
+            </nav>
+
+            <!--Imagen de perfil de usuario-->
+            <div class="user-profile-img"> 
+                <img src="./img/user-profile.jpeg" alt="Imagen de perfil del usuario" class="profile-image"> 
+            </div>
+        </div>
+
+    </header>
+
+    <aside> <!--ASIDE, menú lateral-->
+        <ul>
+            <li>
+                <a href="index.html">
+                <span class="material-symbols-outlined">home</span>
+                Inicio</a>
+            </li>
+            <li>
+                <a href="tareas.html">   
+                <span class="material-symbols-outlined">checklist</span>
+                Tareas</a>
+            </li>
+            <li id="item">
+                <a href="notas.html">
+                <span class="material-symbols-outlined">edit_note</span>
+                Notas</a>
+            </li>
+            <li>
+                <a href="inspiracion.html">
+                <span class="material-symbols-outlined">emoji_objects</span>
+                Inspiración</a>
+            </li>
+            <li>
+                <a href="#">
+                <span class="material-symbols-outlined">settings</span>
+                Configuración</a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="container-fluid"> <!--Se añade el fluid para que el container ocupe el 100% del ancho-->
+      <section class="row" > <!--Ejemplo de bootstrap sacado del código de Candela, no he podido encontrarlo-->
+            <div class="col col-sm-3 col-md-8 col-lg-11">
+                <form class="search-form">
+                    <div class="row">
+                            <div class="col-md-4">
+                                <label for="textInput" class="form-label" >Buscar:</label>
+                                <input type="text" id="textInput" placeholder="" />
+                            </div>
+                            <div class="col-md-1">
+                                <input class="form-check-input" type="checkbox" id="fieldsetCheck"/>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-check-label" for="fieldsetCheck">
+                                    Deshabilitar
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-primary search-button">
+                                    <span class="material-symbols-outlined search">search</span>
+                                </button>
+                            </div>
+                    </div>
+                </form>
+            </div>    
+      </section>
+
+        <section class="row my-4">
+            <h1>Últimas notas</h1>
+            <article class="p-1 col col-sm-4 col-md-5 col-lg-8">  <!--Se añade el margin con el Bootstrap m=margin 1 = 0.25 rem// datos mirados en la web, he cambiado el margin por el padding para asegurarme que los elementos me quedaban alineados entre ellos--> 
+            <!-- Para hacerlo responsive, después de col poner la medida de columnas que tienen que ocupar, per exemple col-md-12 = columna-mediana-12 colmnas ...-->
+            
+                <div class="card" style="width: 100%;"> <!--Ejemplo de card sacado de Bootstrap-->
+                    <img src="./img/img.flower1.jpg" class="card-img-top" alt="Imagen de notas">
+                    <div class="card-body">
+                        <h2>Título de la nota</h2>
+                        <h3>Subtítulo de la nota</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="./notas2.html" class="btn btn-primary card-link">Enlace</a> <!--Ejemplo a un link que no existe para que pareza no visitado-->
+                    </div>
+                </div>    
+            </article>
+            <article class="p-1 col col-md-3 col-lg-3">
+                <div class="card h-100 card-body">
+                    <h2>Título de la nota</h2>
+                    <h3>Subtítulo de la nota</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="javascript:void(0)" class="btn btn-primary card-link">Enlace</a>
+                </div>
+            </article>
+        </section>
+        <section class="row">
+            <article class="p-1 col col-sm-12 col-md-5 col-lg-3">
+                <div class="card card-quote h-100"> <!--Ejemplo de quote sacado de Bootstrap, se añade h-100 para ajustar la altura al 100% del contenedor-->
+                    <div class="card-header">
+                        <h2>Quote</h2>
+                    </div>
+                    <div class="card-body">
+                        <figure>
+                        <blockquote class="blockquote">
+                            <p class="card-text-quote">Añadir una frase célebre de alguien famoso.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Nombre de la persona famosa en <cite title="Source Title">Nombre del librito</cite>
+                        </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+            <article class="p-1 col col-sm-12 col-md-5 col-lg-3">
+                <div class="card h-100 card-body">
+                    <h2>Título de la nota</h2>
+                    <h3>Subtítulo de la nota</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="#" class="btn btn-primary card-link">Enlace</a>
+                </div>    
+            </article>
+            <article class="p-1 col col-sm-12 col-md-5 col-lg-5">
+                <div class="card h-100 card-body" >
+                    <h2>Título de la nota</h2>
+                    <h3>Subtítulo de la nota</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="#" class="btn btn-primary card-link">Enlace</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer fuera del main porqué se replica en todas las páginas-->
+        <small> ©2025 MindBox. Todos los derechos reservados</small>
+    </footer>
+
+
+    <!-- El link a JS va al final porque cuando algo falla, no carga nada de lo que viene después, Si queremos evitar esos problemas lo ponemos al finaly así si hay algun problema no nos impide la visualiación -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
