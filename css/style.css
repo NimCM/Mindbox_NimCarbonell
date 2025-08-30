@@ -130,7 +130,7 @@ button:active, .button:active, .btn:active{
 
 .profile-image{
     width:60px;
-    border-radius: 80%;
+    border-radius: 50%;
 }
 
 .profile-image:hover{ /* cuando pones el cursor sobre la imagen se crea un borde */
@@ -209,18 +209,21 @@ header{
 
 }
 
-.feature-box{
+.panel{
     border: 0.1px rgb(232 232 232) solid;
     box-sizing: border-box;
-    padding: 20px; /* para que el botón quede dentro de la box */
     border-radius: 20px;
     background-color: var(--main-bg-color);
-    box-shadow: 1px 1px 5px var(--shadow-color) ;  /* offset-x, offset-y, blur-radius, color */
+    box-shadow: 1px 1px 5px var(--shadow-color); /* offset-x, offset-y, blur-radius, color */ 
+    justify-content: space-between;
+}
+
+.feature-box{
+    padding: 20px; /* para que el botón quede dentro de la box */
     flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
     display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     flex-direction: column;
     align-items: start;
-    justify-content: space-between;
     min-height: 100px;
 }
 
@@ -240,11 +243,6 @@ header{
 }
 
 .box-inspo, .task-form{
-    border: 0.1px rgb(232 232 232) solid;
-    box-sizing: border-box; 
-    border-radius: 20px;
-    background-color: var(--main-bg-color);
-    box-shadow: 1px 1px 5px var(--shadow-color) ;  /* offset-x, offset-y, blur-radius, color */
     flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
     overflow: hidden; /* Esconde la parte que sobra de la imagen como las esquinas */
 }
@@ -275,19 +273,13 @@ header{
 }
 
 .inspo-box, .search-form, .form-date{
-    border: 0.1px rgb(232 232 232) solid;
-    box-sizing: border-box; 
-    border-radius: 20px;
-    background-color: var(--main-bg-color);
-    box-shadow: 1px 1px 5px var(--shadow-color) ; 
     padding: 30px;
-    display: flex;
+    display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     flex-direction: column;
-    justify-content: space-between;
     height: auto;
     width: 100%;
     gap:20px;
-
+    
     label{ /* Titulos de las casillas */
         margin: 0; /* Para quitar el margen predefinido en el parrafo */
     } 
@@ -542,7 +534,7 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
 
 .task-form{
     padding: 10px;
-    display: flex;
+    display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     align-items: center;
     gap: 10px;
     margin-right: 15px;
