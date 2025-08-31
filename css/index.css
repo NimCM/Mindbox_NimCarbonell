@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+*/
+.panel { /* Uso de mixin con variable para  el box shadow */
+  border: 0.1px rgb(232, 232, 232) solid;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: var(--main-bg-color);
+  /*box-shadow: 1px 1px 5px var(--shadow-color); /* offset-x, offset-y, blur-radius, color */
+  box-shadow: 1px 1px 5px rgb(219, 218, 218); /* offset-x, offset-y, blur-radius, color */
+  justify-content: space-between;
+}
+
+aside { /* Uso de mixin con variable para  el box shadow + Nesting para los elementos dentro de Aside */ }
+aside ul {
+  list-style-type: none; /* quitamos los puntos de delante de la lista */
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  /* si no sabemos cuantos items tendremos, podemos dejar que defina segun cuantos items hay y que los items definan la medida*/
+  gap: 5px;
+  justify-content: space-around;
+  align-content: center;
+  padding-left: 15px;
+  margin: 0;
+}
+aside ul li {
+  max-width: 95%;
+  padding: 5px 0 0 5px;
+  box-shadow: 1px 1px 5px rgb(219, 218, 218); /* offset-x, offset-y, blur-radius, color */
+  cursor: pointer;
+  line-height: 30px;
+}
+aside ul material-symbols-outlined { /* iconos aside */
+  font-size: 1.7rem; /* se usa font-size porque es una fuente de google, no una imagen */
+}
+aside ul a {
+  /* Mixin de flex donde puedes aplicar todos los valores de las variables seleccionades */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: start;
+  gap: 0.3125rem;
+}
+
+.form-check-input:focus, .form-control:focus { /* Uso de mixin con variable para  el box shadow */
+  outline: none; /* Elimina el outline azul que viene por defecto*/
+  border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
+  box-shadow: 1px 1px 5px rgb(49, 156, 72); /* offset-x, offset-y, blur-radius, color */
+  /* Añade el glow alrededor */
+}
+
+/*
+$colorPrincipalFondo: white;
+$colorSecundarioFondo:rgb(244 244 244);
+$colorTerciarioFondo:red;*/
+/*main{
+    @include flex(column, center, center);
+}*/
+/*
+button{
+    height: calcRem(20 * 2);
+
+    $primary-color: green;
+    color: invert($primary-color, 80%);
+}*//*# sourceMappingURL=index.css.map */

@@ -1,0 +1,23 @@
+@mixin box_shadow_smooth($color){
+    box-shadow: 1px 1px 5px ($color); /* offset-x, offset-y, blur-radius, color */ 
+}
+
+@mixin flex ($direction,$justify,$align){ /* Mixin de flex donde puedes aplicar todos los valores de las variables seleccionades */
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-content: $align;
+}
+
+
+@function calcRemGap($pixeles){
+    @return math.div($pixeles,16)*1rem;
+}
+
+/*
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+*/

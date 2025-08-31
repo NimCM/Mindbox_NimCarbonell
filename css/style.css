@@ -7,7 +7,14 @@
     --secondary-color:rgb(177 227 150);
     --highlight-color: rgb(49 156 72);
     --shadow-color:rgb(219 218 218);
-
+    --border-radius-small:8px;
+    --border-radius-medium:20px;
+    --padding-none:0px;
+    --padding-xxs:3px;
+    --padding-s:10px;
+    --padding-m:20px;
+    --padding-l:24px;
+    --padding-xxl:32px;
 }
 
 *{
@@ -37,7 +44,7 @@ img{ /* Así totas las imagenes son responsive, suele ser un CSS básico en las 
 body{
     font-family: "Funnel Display", sans-serif; /* Tipografia de google fonts */
     margin:0;
-    padding:0;
+    padding:var(--padding-none);
     background-color: var(--second-bg-color); /* Color de fondo general aquí para mantener header y footer con fondo blanco */
 }
 
@@ -87,7 +94,7 @@ a.selected{
 
 footer{
     background-color: white; /* color de fondo del footer */
-    padding: 24px; /* espacio superior y inferior del footer */
+    padding: var(--padding-l); /* espacio superior y inferior del footer */
     text-align: center;
 
 }
@@ -154,7 +161,7 @@ header{
     .main-menu{
         display:flex;
         margin:0;
-        padding: 0;
+        padding: var(--padding-none);
         list-style:none;  /* elimina los puntos de la lista */
         flex: 3;
         gap:25px;
@@ -194,7 +201,7 @@ header{
 /* ESTILOS PARA DASHBOARD */
 
 .featured{ /* Delante del punto podemos poner 'section' que es el tag */
-    padding:32px;
+    padding:var(--padding-xxl);
     margin-bottom: 30px; 
 }
 
@@ -209,17 +216,8 @@ header{
 
 }
 
-.panel{
-    border: 0.1px rgb(232 232 232) solid;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background-color: var(--main-bg-color);
-    box-shadow: 1px 1px 5px var(--shadow-color); /* offset-x, offset-y, blur-radius, color */ 
-    justify-content: space-between;
-}
-
 .feature-box{
-    padding: 20px; /* para que el botón quede dentro de la box */
+    padding: var(--padding-m); /* para que el botón quede dentro de la box */
     flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
     display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     flex-direction: column;
@@ -230,7 +228,7 @@ header{
 /* ESTILOS PARA INSPIRACIONES */
 
 .inspiration{ /* Delante del punto podemos poner 'section' que es el tag */
-    padding: 32px;
+    padding: var(--padding-xxl);
     margin-bottom: 30px; 
 }
 
@@ -261,19 +259,19 @@ header{
     display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     flex-direction: column;
     justify-content: flex-end;
-    padding: 20px;
+    padding: var(--padding-m);
     min-height: 200px; /* Altura definida para poder dejar el texto centrado en altura */
 }
 
 /* INSPIRACIÓN */
 
 .inspiration-page{
-    padding:32px; /* para que no este tocando con los laterales */
+    padding:var(--padding-xxl); /* para que no este tocando con los laterales */
     margin-bottom: 30px;  /* para que hay más espacio con la sección inferior */
 }
 
 .inspo-box, .search-form, .form-date{
-    padding: 30px;
+    padding: var(--padding-xxl);
     display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     flex-direction: column;
     height: auto;
@@ -306,7 +304,7 @@ header{
     #inspo-comment{
         height: 100px;
         line-height: 1.5px;
-        padding-top: 12px;
+        padding-top: var(--padding-s);
     }
 
     .form-date{
@@ -318,47 +316,13 @@ header{
 .inspo-form, #textInput, .form-control{ /* casillas dle formulario */
     width: 100%;
     font-size: 0.8rem;
-    padding: 3px;
-    border-radius: 8px;
+    padding: var(--padding-xxs);
+    border-radius: var(--border-radius-small);
     border: 1px  var(--secondary-color) solid;
     background-color: var(--second-bg-color); 
 }
 
 /* ASIDE GRID */
-
-aside ul{
-    list-style-type: none; /* quitamos los puntos de delante de la lista */
-    height: 300px;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    /* si no sabemos cuantos items tendremos, podemos dejar que defina segun cuantos items hay y que los items definan la medida*/
-    gap:5px;
-    justify-content: space-around;
-    align-content: center;
-    padding-left: 15px;
-    margin: 0;
-}
-
-aside ul li{
-   /* border: 1px rgb(190 13 43) solid; */
-    max-width: 95%;
-    padding: 5px 0 0 5px;
-    box-shadow: 1px 1px 5px var(--shadow-color) ;  /* offset-x, offset-y, blur-radius, color */
-    cursor:pointer; 
-    line-height: 30px;
-
-    .material-symbols-outlined{ /* iconos aside */
-        font-size: 1.7rem; /* se usa font-size porque es una fuente de google, no una imagen */
-    }
-    
-    a{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-items: center;
-        gap: 5px;
-    }
-}
 
 header{
     grid-area: encabezado;
@@ -410,13 +374,13 @@ aside ul li:nth-child(4){ /* posició de l'element que volem modificat */
 
 aside ul li{ /* seleccionar todos los aside menos al que tiene el id item) */
     background-color: var(--highlight-color);
-    border-radius: 15px;
+    border-radius: var(--border-radius-medium);
 } 
 
 
 aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id item) */
     background-color: white;
-    border-radius: 15px;
+    border-radius: var(--border-radius-medium);
 } 
 
 /* PROBAMOS BOOTSTRAP */
@@ -449,7 +413,7 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    padding:20px;
+    padding:var(--padding-m);
 }
 
 .card-link{
@@ -471,7 +435,7 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
 }
 
 .search-button {
-  padding-bottom: 0;
+  padding-bottom: var(--padding-none);
   margin-top: 30px;
 }
 
@@ -481,12 +445,6 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
 
 .form-check-input {
   margin-top: 43px;
-}
-
-.form-check-input:focus {
-  outline: none; /* Elimina el outline azul que viene por defecto*/
-  border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
-  box-shadow: 0 0 5px var(--highlight-color); /* Añade el glow alrededor */  
 }
 
 #fieldsetCheck:checked{ /* color de la checkbox una vez seleccionada */
@@ -533,7 +491,7 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
 /* TAREAS */
 
 .task-form{
-    padding: 10px;
+    padding: var(--padding-s);
     display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     align-items: center;
     gap: 10px;
@@ -550,12 +508,6 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
 
 .inspo-form:focus{
  outline: 1.5px var(--main-color) solid;
-}
-
-.form-control:focus{
-  outline: none; /* Elimina el outline azul que viene por defecto*/
-  border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
-  box-shadow: 0 0 5px var(--highlight-color); /* Añade el glow alrededor */  
 }
 
 .last-tasks{
