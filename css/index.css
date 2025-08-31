@@ -1,4 +1,29 @@
 @charset "UTF-8";
+@keyframes logo_colors {
+  0% {
+    color: #1c1c1c;
+  }
+  25% {
+    color: rgb(49, 156, 72);
+  }
+  50% {
+    color: rgb(177, 227, 150);
+  }
+  75% {
+    color: rgb(49, 156, 72);
+  }
+  100% {
+    color: #1c1c1c;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-80%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 .panel { /* Uso de mixin con variable para  el box shadow */
   border: 0.1px rgb(232, 232, 232) solid;
   box-sizing: border-box;
@@ -76,6 +101,27 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover { /*Transición para
   color: var(--secondary-color);
   transform: scale(1.2);
   transition: color 0.3s ease;
+}
+
+.logo {
+  /* Mixin de flex donde puedes aplicar todos los valores de las variables seleccionades */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.logo .mindbox {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: "Funnel Display", sans-serif;
+  margin: 0px;
+  position: relative;
+  overflow: hidden;
+  animation: 10s ease 0.1s infinite logo_colors, 5s linear 0.1s 1 slide-in; /* Primera animación para el cambio de color del logo, la segunda para que el logo se desplace, solo se aplica en la página principal */
+}
+.logo .mindbox:hover {
+  text-decoration: none;
+  color: #1c1c1c;
 }
 
 /*

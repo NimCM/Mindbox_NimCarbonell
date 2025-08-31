@@ -2,6 +2,7 @@
 
 @import "variables";
 @import "mixins"; 
+@import "keyframes"; 
 
 .panel{ /* Uso de mixin con variable para  el box shadow */
     border: 0.1px rgb(232 232 232) solid;
@@ -40,7 +41,7 @@ aside ul{ /* Uso de mixin con variable para  el box shadow + Nesting para los el
 
     a{
         @include flex(column, center, start);
-        gap:calcRemGap(20 / 4);
+        gap:calcRemGap(2.5 * 2);
     }
 }
 
@@ -82,6 +83,25 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover{ /*Transición para 
     color:var(--secondary-color);
     transform: scale(1.2);
     transition: color 0.3s ease;
+}
+.logo{
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+
+    .mindbox{
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-family: "Funnel Display", sans-serif;
+        margin: 0px; 
+        position: relative;
+        overflow: hidden;
+        animation: 10s ease 0.1s infinite logo_colors, 
+        5s linear 0.1s 1 slide-in ; /* Primera animación para el cambio de color del logo, la segunda para que el logo se desplace, solo se aplica en la página principal */
+    }
+
+    .mindbox:hover{
+        text-decoration: none;
+        color:$mainColor;
+    }
 }
 
 /*
