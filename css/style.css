@@ -15,6 +15,13 @@
     --padding-m:20px;
     --padding-l:24px;
     --padding-xxl:32px;
+    --gap-xxs:8px;
+    --gap-xs:10px;
+    --gap-s:12px;
+    --gap-m:15px;
+    --gap-l:20px;
+    --gap-xl:25px;
+    --gap-xxl:80px;
 }
 
 *{
@@ -114,13 +121,6 @@ button, .button, .btn{ /* links anidados dentro de la classe features, btn llama
     color: var(--highlight-color);
 }
 
-button:hover, .button:hover, .btn:hover, .btn-primary:hover{
-    background-color: var(--main-color); /* color de los botones */
-    color: var(--secondary-color);
-    border: none;
-    text-decoration: none;
-} 
-
 button:active, .button:active, .btn:active{
     color:white;
     background-color: var(--highlight-color) !important; /* Se añade !important porque es la única manera que he encontrado para sobreescrivir el bootstrap */
@@ -135,15 +135,7 @@ button:active, .button:active, .btn:active{
 
 /* USER PROFILE */
 
-.profile-image{
-    width:60px;
-    border-radius: 50%;
-}
-
-.profile-image:hover{ /* cuando pones el cursor sobre la imagen se crea un borde */
-    outline: 5px solid var(--secondary-color);
-}
-
+/* Cambios aplicados en en alxivo index.scss */
 /* HEADER */
 
 header{
@@ -164,7 +156,7 @@ header{
         padding: var(--padding-none);
         list-style:none;  /* elimina los puntos de la lista */
         flex: 3;
-        gap:25px;
+        gap:var(--gap-xl);
         
     }
 
@@ -174,7 +166,7 @@ header{
         flex: 1;
         justify-content:flex-end;
         margin-right: 20px;
-        gap:15px;
+        gap:var(--gap-m);
 
         span{
            cursor:pointer; 
@@ -183,17 +175,17 @@ header{
 
     .icon-menu{
         display:flex;
-        gap:15px;
+        gap:var(--gap-m);
         color: var(--main-color);
     }
 
-    .material-symbols-outlined{ /* iconos header */
-        font-size: 2rem; /* se usa font-size porque es una fuente de google, no una imagen */
-    }
+   /* .material-symbols-outlined{ /* iconos header */
+        /*font-size: 2rem; /* se usa font-size porque es una fuente de google, no una imagen */
+    
 
-    .material-symbols-outlined:hover{
+    /*.material-symbols-outlined:hover{
         color:var(--secondary-color);
-    }
+    }*/
 
 
 }
@@ -210,7 +202,7 @@ header{
 .featured-boxes{
     display: flex;
     flex-wrap:wrap; /* permite que los elementos se pongan en más de una fila */
-    gap: 80px;
+    gap: var(--gap-xxl);
     align-items: stretch;
     margin: auto 20px;
 
@@ -235,7 +227,7 @@ header{
 .content-inspo{
     display: flex;
     flex-wrap:wrap; /* permite que los elementos se pongan en más de una fila */
-    gap: 80px;
+    gap: var(--padding-xxl);
     align-items: center;
     margin: auto 20px;
 }
@@ -276,7 +268,7 @@ header{
     flex-direction: column;
     height: auto;
     width: 100%;
-    gap:20px;
+    gap: var(--gap-l);
     
     label{ /* Titulos de las casillas */
         margin: 0; /* Para quitar el margen predefinido en el parrafo */
@@ -353,8 +345,8 @@ body{
     /* gap:10px; se puede usar pero visualmente no queda igual entre filas que entre columnas */
 
     /* propiedades opcionales, com las tres superiores ya es suficiente, pero si queremos refinar el diseño se pueden utilizar*/
-    column-gap: 8px;
-    row-gap: 10px;
+    column-gap: var(--gap-xxs);
+    row-gap: var(--gap-xs)
 }
 
 
@@ -494,7 +486,7 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
     padding: var(--padding-s);
     display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
     align-items: center;
-    gap: 10px;
+    gap: var(--gap-xs);
     margin-right: 15px;
 }
 
@@ -553,8 +545,8 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Número de columnas, 4, con el ancho, 1 fracción (sobre 4) del espacio disponible por columna */
     grid-template-rows: repeat(2, auto); /* Numero de filas */
-    column-gap: 12px;
-    row-gap: 15px;
+    column-gap: var(--gap-s);
+    row-gap: var(--gap-m);
     margin-right: 15px;
     grid-template-areas:
     "task1 task1 task2 task3" 

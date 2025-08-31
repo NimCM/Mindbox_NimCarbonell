@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/*
-
-@function invert($color, $amount: 100%) {
-  $inverse: change-color($color, $hue: hue($color) + 180);
-  @return mix($inverse, $color, $amount);
-}
-*/
 .panel { /* Uso de mixin con variable para  el box shadow */
   border: 0.1px rgb(232, 232, 232) solid;
   box-sizing: border-box;
@@ -16,8 +9,7 @@
   justify-content: space-between;
 }
 
-aside { /* Uso de mixin con variable para  el box shadow + Nesting para los elementos dentro de Aside */ }
-aside ul {
+aside ul { /* Uso de mixin con variable para  el box shadow + Nesting para los elementos dentro de Aside */
   list-style-type: none; /* quitamos los puntos de delante de la lista */
   height: 300px;
   display: grid;
@@ -53,6 +45,37 @@ aside ul a {
   border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
   box-shadow: 1px 1px 5px rgb(49, 156, 72); /* offset-x, offset-y, blur-radius, color */
   /* Añade el glow alrededor */
+}
+
+button:hover, .button:hover, .btn:hover, .btn-primary:hover { /*Transición para hacer el hover más smooth*/
+  background-color: var(--main-color); /* color de los botones */
+  color: var(--secondary-color);
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.5s ease 0.1s, color 0.5s ease-in-out 0.1s; /* Transición doble, cambio de color de fondo con cambio de color del texto */
+}
+
+.profile-image {
+  width: 60px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out; /* Transición de cambio de tamaño al pasar el ratón por encima */
+}
+
+.profile-image:hover { /* cuando pones el cursor sobre la imagen se crea un borde */
+  outline: 5px solid var(--secondary-color);
+  transform: scale(1.1);
+  transition: outline 0.3s ease;
+}
+
+.material-symbols-outlined { /* iconos header */
+  font-size: 2rem; /* se usa font-size porque es una fuente de google, no una imagen */
+  transition: transform 0.2s ease-in-out;
+}
+
+.material-symbols-outlined:hover {
+  color: var(--secondary-color);
+  transform: scale(1.2);
+  transition: color 0.3s ease;
 }
 
 /*
