@@ -151,9 +151,39 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover { /*Transición para
   row-gap: var(--gap-xs);
 }
 
+.div-search-form {
+  /* Mixin de flex donde puedes aplicar todos los valores de las variables seleccionades */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: start;
+  padding-top: 20px;
+}
+.div-search-form .search-form {
+  width: 95%;
+}
+
+.notas-container, .grid-container-tasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.notas-container-titol, .container-task-form {
+  padding-top: 50px;
+}
+
+.task-form {
+  margin-left: 20px;
+}
+
 @media (max-width: 480px) {
-  .feature-box, .box-inspo {
-    width: 90%;
+  .feature-box, .box-inspo, .notas, .uploaded-task {
+    width: 95%;
+  }
+  .notas {
+    height: auto;
   }
 }
 @media (max-width: 768px) {
@@ -175,7 +205,7 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover { /*Transición para
   }
 }
 @media (min-width: 481px) {
-  .feature-box, .box-inspo {
+  .feature-box, .box-inspo, .notas, .uploaded-task {
     width: 45%;
   }
 }
@@ -183,18 +213,7 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover { /*Transición para
   .feature-box, .box-inspo {
     width: 45%;
   }
-}
-/*
-$colorPrincipalFondo: white;
-$colorSecundarioFondo:rgb(244 244 244);
-$colorTerciarioFondo:red;*/
-/*main{
-    @include flex(column, center, center);
-}*/
-/*
-button{
-    height: calcRem(20 * 2);
-
-    $primary-color: green;
-    color: invert($primary-color, 80%);
-}*//*# sourceMappingURL=index.css.map */
+  .notas, .uploaded-task {
+    width: 32%;
+  }
+}/*# sourceMappingURL=index.css.map */

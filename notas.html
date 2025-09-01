@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/index.css">
 
 </head>
-<body class="grid">
+<body class="grid-index">
     <header class="main-header">
         <!--LOGO-->
         <div class="logo">
@@ -84,7 +84,7 @@
 
     <main class="container-fluid"> <!--Se añade el fluid para que el container ocupe el 100% del ancho-->
       <section class="row" > <!--Ejemplo de bootstrap sacado del código de Candela, no he podido encontrarlo-->
-            <div class="col col-sm-3 col-md-8 col-lg-11">
+            <div class="div-search-form"> <!--class="col col-sm-3 col-md-8 col-lg-11"-->
                 <form class="panel search-form">
                     <div class="row">
                             <div class="col-md-4">
@@ -109,64 +109,69 @@
             </div>    
       </section>
 
-        <section class="row my-4">
+       <section class="notas-container-titol"> <!-- Class de bootstrap eliminada para aplicar media queries class="row my-4"-->
             <h1>Últimas notas</h1>
-            <article class="p-1 col col-sm-4 col-md-5 col-lg-8">  <!--Se añade el margin con el Bootstrap m=margin 1 = 0.25 rem// datos mirados en la web, he cambiado el margin por el padding para asegurarme que los elementos me quedaban alineados entre ellos--> 
-            <!-- Para hacerlo responsive, después de col poner la medida de columnas que tienen que ocupar, per exemple col-md-12 = columna-mediana-12 colmnas ...-->
-            
-                <div class="card" style="width: 100%;"> <!--Ejemplo de card sacado de Bootstrap-->
-                    <img src="./img/img.flower1.jpg" class="card-img-top" alt="Imagen de notas">
-                    <div class="card-body">
+            <section class="notas-container">
+                <article class="notas">  <!--Se añade el margin con el Bootstrap m=margin 1 = 0.25 rem// datos mirados en la web, he cambiado el margin por el padding para asegurarme que los elementos me quedaban alineados entre ellos--> 
+                <!-- Para hacerlo responsive, después de col poner la medida de columnas que tienen que ocupar, per exemple col-md-12 = columna-mediana-12 colmnas ...-->
+                <!-- Class de bootstrap eliminada para aplicar media queries class="p-1 col col-sm-4 col-md-5 col-lg-8" -->
+                    <div class="card" style="width: 100%;"> <!--Ejemplo de card sacado de Bootstrap-->
+                        <img src="./img/img.flower1.jpg" class="card-img-top" alt="Imagen de notas">
+                        <div class="card-body">
+                            <h2>Título de la nota</h2>
+                            <h3>Subtítulo de la nota</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="./notas2.html" class="btn btn-primary card-link">Enlace</a> <!--Ejemplo a un link que no existe para que pareza no visitado-->
+                        </div>
+                    </div>    
+                </article>
+                <article class="notas">
+                <!-- Class de bootstrap eliminada para aplicar media queries class="p-1 col col-md-3 col-lg-3" -->
+                    <div class="card card-body">
                         <h2>Título de la nota</h2>
                         <h3>Subtítulo de la nota</h3>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a href="./notas2.html" class="btn btn-primary card-link">Enlace</a> <!--Ejemplo a un link que no existe para que pareza no visitado-->
+                        <a href="javascript:void(0)" class="btn btn-primary card-link">Enlace</a>
                     </div>
-                </div>    
-            </article>
-            <article class="p-1 col col-md-3 col-lg-3">
-                <div class="card h-100 card-body">
-                    <h2>Título de la nota</h2>
-                    <h3>Subtítulo de la nota</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <a href="javascript:void(0)" class="btn btn-primary card-link">Enlace</a>
-                </div>
-            </article>
-        </section>
-        <section class="row">
-            <article class="p-1 col col-sm-12 col-md-5 col-lg-3">
-                <div class="card card-quote h-100"> <!--Ejemplo de quote sacado de Bootstrap, se añade h-100 para ajustar la altura al 100% del contenedor-->
-                    <div class="card-header">
-                        <h2>Quote</h2>
+                </article>
+                <!-- Class de bootstrap eliminada para aplicar media queries class="row"-->
+                <article class="notas">
+                <!-- Class de bootstrap eliminada para aplicar media queries class="p-1 col col-sm-12 col-md-5 col-lg-3" -->
+                    <div class="card card-quote h-100"> <!--Ejemplo de quote sacado de Bootstrap, se añade h-100 para ajustar la altura al 100% del contenedor-->
+                        <div class="card-header">
+                            <h2>Quote</h2>
+                        </div>
+                        <div class="card-body">
+                            <figure>
+                            <blockquote class="blockquote">
+                                <p class="card-text-quote">Añadir una frase célebre de alguien famoso.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Nombre de la persona famosa en <cite title="Source Title">Nombre del librito</cite>
+                            </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <figure>
-                        <blockquote class="blockquote">
-                            <p class="card-text-quote">Añadir una frase célebre de alguien famoso.</p>
-                        </blockquote>
-                        <figcaption class="blockquote-footer">
-                            Nombre de la persona famosa en <cite title="Source Title">Nombre del librito</cite>
-                        </figcaption>
-                        </figure>
+                </article>
+                <article class="notas">
+                <!-- Class de bootstrap eliminada para aplicar media queries class="p-1 col col-sm-12 col-md-5 col-lg-3" -->
+                    <div class="card h-100 card-body">
+                        <h2>Título de la nota</h2>
+                        <h3>Subtítulo de la nota</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#" class="btn btn-primary card-link">Enlace</a>
+                    </div>    
+                </article>
+                <article class="notas">
+                <!-- Class de bootstrap eliminada para aplicar media queries class="p-1 col col-sm-12 col-md-5 col-lg-5" -->
+                    <div class="card h-100 card-body" >
+                        <h2>Título de la nota</h2>
+                        <h3>Subtítulo de la nota</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="#" class="btn btn-primary card-link">Enlace</a>
                     </div>
-                </div>
-            </article>
-            <article class="p-1 col col-sm-12 col-md-5 col-lg-3">
-                <div class="card h-100 card-body">
-                    <h2>Título de la nota</h2>
-                    <h3>Subtítulo de la nota</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <a href="#" class="btn btn-primary card-link">Enlace</a>
-                </div>    
-            </article>
-            <article class="p-1 col col-sm-12 col-md-5 col-lg-5">
-                <div class="card h-100 card-body" >
-                    <h2>Título de la nota</h2>
-                    <h3>Subtítulo de la nota</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <a href="#" class="btn btn-primary card-link">Enlace</a>
-                </div>
-            </article>
+                </article>
+            </section>
         </section>
     </main>
 

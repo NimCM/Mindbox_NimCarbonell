@@ -136,6 +136,7 @@ button:active, .button:active, .btn:active{
 /* USER PROFILE */
 
 /* Cambios aplicados en en alxivo index.scss */
+
 /* HEADER */
 
 header{
@@ -179,15 +180,6 @@ header{
         color: var(--main-color);
     }
 
-   /* .material-symbols-outlined{ /* iconos header */
-        /*font-size: 2rem; /* se usa font-size porque es una fuente de google, no una imagen */
-    
-
-    /*.material-symbols-outlined:hover{
-        color:var(--secondary-color);
-    }*/
-
-
 }
 
 /* ESTILOS PARA DASHBOARD */
@@ -197,13 +189,12 @@ header{
     margin-bottom: 30px; 
 }
 
-
-
 .featured-boxes{
     display: flex;
     flex-wrap:wrap; /* permite que los elementos se pongan en más de una fila */
     gap: var(--gap-xxl);
     align-items: stretch;
+    justify-content: center;
     margin: auto 20px;
 
 }
@@ -220,6 +211,7 @@ header{
     flex-wrap:wrap; /* permite que los elementos se pongan en más de una fila */
     gap: var(--padding-xxl);
     align-items: center;
+    justify-content: center;
     margin: auto 20px;
 }
 
@@ -515,11 +507,11 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
     grid-area: task6;
 }
 
-.grid-container-tasks{
-    display: grid;
+/*.grid-container-tasks{ /* Grid eliminada para poder aplicar los media queries en scss */
+    /*display: grid;
     grid-template-columns: repeat(4, 1fr); /* Número de columnas, 4, con el ancho, 1 fracción (sobre 4) del espacio disponible por columna */
-    grid-template-rows: repeat(2, auto); /* Numero de filas */
-    column-gap: var(--gap-s);
+    /*grid-template-rows: repeat(2, auto); /* Numero de filas */
+    /*column-gap: var(--gap-s);
     row-gap: var(--gap-m);
     margin-right: 15px;
     grid-template-areas:
@@ -527,7 +519,6 @@ aside ul li:not(#item){ /* seleccionar todos los aside menos al que tiene el id 
     "task4 task5 task6 task6";
     /* fila1col1, fila1col2 fila1col3 fila1col4 */
     /* fila2col1, fila2col2 fila2col3 fila2col4 */
-}
 
 .task-card{
     height: 650px;

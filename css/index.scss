@@ -45,8 +45,6 @@ aside ul{ /* Uso de mixin con variable para  el box shadow + Nesting para los el
     }
 }
 
-
-
 .form-check-input:focus, .form-control:focus { /* Uso de mixin con variable para  el box shadow */
   outline: none; /* Elimina el outline azul que viene por defecto*/
   border: 2px solid var(--highlight-color); /* Cambio de color del borde*/
@@ -135,10 +133,37 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover{ /*Transición para 
     row-gap: var(--gap-xs)
 }
 
+.div-search-form{
+    @include flex(row, center, start);
+    padding-top: 20px;;
+
+    .search-form{
+        width: 95%;
+    }
+}
+
+.notas-container, .grid-container-tasks{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   justify-content: center;
+}
+
+.notas-container-titol, .container-task-form{
+    padding-top: 50px;
+}
+
+.task-form{
+    margin-left: 20px;
+}
 
 @media (max-width:480px){
-    .feature-box, .box-inspo{
-        width: 90%;
+    .feature-box, .box-inspo, .notas, .uploaded-task{
+        width: 95%;
+    }
+
+    .notas{
+        height: auto;
     }
 }
 
@@ -168,7 +193,7 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover{ /*Transición para 
 }
 
 @media (min-width:481px){
-    .feature-box, .box-inspo{
+    .feature-box, .box-inspo, .notas, .uploaded-task{
         width:45%;
     }
 }
@@ -177,26 +202,8 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover{ /*Transición para 
     .feature-box, .box-inspo{
         width: 45%;
     }
+
+    .notas, .uploaded-task{
+        width: 32%;
+    }
 }
-
-
-
-
-
-/*
-$colorPrincipalFondo: white;
-$colorSecundarioFondo:rgb(244 244 244);
-$colorTerciarioFondo:red;*/
-
-
-
-/*main{
-    @include flex(column, center, center);
-}*/
-/*
-button{
-    height: calcRem(20 * 2);
-
-    $primary-color: green;
-    color: invert($primary-color, 80%);
-}*/
