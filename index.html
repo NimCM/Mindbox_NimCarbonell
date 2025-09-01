@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body class="grid-index">
     <header class="main-header">
         <!--LOGO-->
         <div class="logo">
@@ -113,7 +113,13 @@
             <h1>Últimas ispiraciones</h1>
             <div class="content-inspo">
                 <article class="panel box-inspo">
-                    <img src="./img/img.flower1.jpg" alt="Imagen inspiración 1" class="inspo-image">
+                    <!--<img src="./img/img.flower1.jpg" alt="Imagen inspiración 1" class="inspo-image">-->
+                    <picture> <!-- Imagen responsive-->
+                        <source media="(min-width: 768px)" srcset="./img/img.flower1.jpg"/>
+                        <source media="(min-width: 480px)" srcset="./img/img.flower2.jpg" />
+                        <img src="./img/img.flower3.jpg" alt="Descripción de la imagen"  loading="lazy" class="inspo-image"/>
+                        <!-- Se aplica el lazy loading y la class solo al img-->
+                    </picture>
                     <div class="inspo-text">
                         <h3>Título de la inspiración 1</h3>
                         <div class="date"> Fecha 01/01/2025</div> <!-- Un div para la fecha para poder definir un estilo concretO-->
@@ -121,7 +127,13 @@
                     </div>
                 </article>
                 <article class="panel box-inspo">
-                    <img src="./img/img.flower2.jpg" alt="Imagen inspiración 2" class="inspo-image">
+                    <!--<img src="./img/img.flower2.jpg" alt="Imagen inspiración 2" class="inspo-image">-->
+                    <picture> <!-- Imagen responsive-->
+                        <source media="(min-width: 768px)" srcset="./img/img.flower1.jpg"/>
+                        <source media="(min-width: 480px)" srcset="./img/img.flower2.jpg" />
+                        <img src="./img/img.flower3.jpg" alt="Descripción de la imagen"  loading="lazy" class="inspo-image"/>
+                        <!-- Se aplica el lazy loading y la class solo al img-->
+                    </picture>
                     <div class="inspo-text">
                         <h3>Título de la inspiración 2</h3>
                         <div class="date"> Fecha 02/01/2025</div> 

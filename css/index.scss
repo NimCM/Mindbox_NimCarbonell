@@ -104,6 +104,85 @@ button:hover, .button:hover, .btn:hover, .btn-primary:hover{ /*Transición para 
     }
 }
 
+/* MEDIA QUERIES EN INICIO, desktop-first */
+
+.feature-box{
+    padding: var(--padding-m); /* para que el botón quede dentro de la box */
+    /* Comentado para poder aplicar los media queries flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
+    /*display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
+    flex-direction: column;
+    align-items: start;
+    min-height: 100px;
+}
+
+.box-inspo{
+   /*flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
+    overflow: hidden; /* Esconde la parte que sobra de la imagen como las esquinas */
+}
+
+.grid, .grid-index{
+    display: grid; /* para poderla ver es obligatorio : n de columes y tamaño; n files y tamaño */
+    grid-template-columns: 20% auto; /* numero y tamaño, poner en orden. puedes poner 30% 70% o 30% auto */
+    grid-template-rows: auto auto auto;/* dar el tamaño de su contenido, auto */
+    grid-template-areas:
+    "menu-lateral encabezado" /* definició de les columnes en orde fila1col1 */
+    "menu-lateral cuerpo" /* definició de les columnes en orde fila1col2 */
+    "menu-lateral pie-pagina";/* definició de les columnes en orde fila1col3 */
+    /* gap:10px; se puede usar pero visualmente no queda igual entre filas que entre columnas */
+
+    /* propiedades opcionales, com las tres superiores ya es suficiente, pero si queremos refinar el diseño se pueden utilizar*/
+    column-gap: var(--gap-xxs);
+    row-gap: var(--gap-xs)
+}
+
+
+@media (max-width:480px){
+    .feature-box, .box-inspo{
+        width: 90%;
+    }
+}
+
+@media (max-width:768px){
+    .grid-index{ /* Colocar el aside bajo el header para formato de pantalla pequeña */
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "encabezado"
+        "menu-lateral"
+        "cuerpo"
+        "pie-pagina";
+
+        aside {
+            height: 50px;
+            padding-bottom: 100px;
+
+            ul{
+                display: grid;
+                padding: 0;
+                margin-top:-80px; /* La única manera que he encontrado para eliminar el espacio superior de esta fila */
+                list-style: none;
+                grid-template-columns:15% 15% 15% 15% 15%;
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
+
+@media (min-width:481px){
+    .feature-box, .box-inspo{
+        width:45%;
+    }
+}
+
+@media (min-width:768px){
+    .feature-box, .box-inspo{
+        width: 45%;
+    }
+}
+
+
+
+
+
 /*
 $colorPrincipalFondo: white;
 $colorSecundarioFondo:rgb(244 244 244);

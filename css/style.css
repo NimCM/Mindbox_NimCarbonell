@@ -208,15 +208,6 @@ header{
 
 }
 
-.feature-box{
-    padding: var(--padding-m); /* para que el botón quede dentro de la box */
-    flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
-    display: flex; /* flex para poder repartir los elementos de la box en toda la altura */
-    flex-direction: column;
-    align-items: start;
-    min-height: 100px;
-}
-
 /* ESTILOS PARA INSPIRACIONES */
 
 .inspiration{ /* Delante del punto podemos poner 'section' que es el tag */
@@ -232,13 +223,13 @@ header{
     margin: auto 20px;
 }
 
-.box-inspo, .task-form{
+/*.box-inspo,*/ .task-form{
     flex: 1 1 calc(50% - 45px); /* Definir que hay dos elementos por linea, dentro del calc tiene que haber un espacio antes y uno después del - */
     overflow: hidden; /* Esconde la parte que sobra de la imagen como las esquinas */
 }
 
 .inspo-image{
-   height: auto;
+   height: 50%;
    max-height: 450px ;
    aspect-ratio: 16/9;
    width: 100%;
@@ -329,24 +320,7 @@ aside{
 }
 
 footer{
-   
     grid-area: pie-pagina;
-    
-}
-
-body{
-    display: grid; /* para poderla ver es obligatorio : n de columes y tamaño; n files y tamaño */
-    grid-template-columns: 20% auto; /* numero y tamaño, poner en orden. puedes poner 30% 70% o 30% auto */
-    grid-template-rows: auto auto auto;/* dar el tamaño de su contenido, auto */
-    grid-template-areas:
-    "menu-lateral encabezado" /* definició de les columnes en orde fila1col1 */
-    "menu-lateral cuerpo" /* definició de les columnes en orde fila1col2 */
-    "menu-lateral pie-pagina";/* definició de les columnes en orde fila1col3 */
-    /* gap:10px; se puede usar pero visualmente no queda igual entre filas que entre columnas */
-
-    /* propiedades opcionales, com las tres superiores ya es suficiente, pero si queremos refinar el diseño se pueden utilizar*/
-    column-gap: var(--gap-xxs);
-    row-gap: var(--gap-xs)
 }
 
 
